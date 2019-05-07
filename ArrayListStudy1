@@ -1,0 +1,80 @@
+package syj;
+
+import java.util.ArrayList;
+
+class Apple{
+	Apple(){}
+}
+public class Study1 {
+
+	public static void main(String[] args) {
+		ArrayList list = new ArrayList();
+		list.add("포도");// 데이터를 저장할 때 add() 메서드를 사용한다.
+		list.add("딸기");
+		list.add("사과");
+		list.add(new Apple());
+		int num = list.size();// ArrayList의 길이, 즉, ArrayList에 저장된 데이터의 개수를 알려준다.
+		for (int i = 0; i < num; i++) {
+			String str = list.get(i);// i번째 저장된 데이터를 알려준다.
+			System.out.println(str);
+		}
+	}
+}
+
+//순차에 상관없이, 클래스를 만들어서, 리스트.애드 로 넣으면 에러 없이 계속 들어간다. 
+
+
+//18째 줄 에러는 == 	String str = (String)list.get(i);이렇게 형변환을 해줘야 한다. 
+//찾을떄는 get 메소드를 이용해 찾는다. 
+//(String)의 형변환을 해줘야함.
+
+
+public class Study1 {
+
+	public static void main(String[] args) {
+		ArrayList list = new ArrayList();
+		list.add(new Apple());// 데이터를 저장할 때 add() 메서드를 사용한다.
+		list.add(new Apple());
+		list.add(new Apple());
+		list.add(new Apple());
+		int num = list.size();// ArrayList의 길이, 즉, ArrayList에 저장된 데이터의 개수를 알려준다.
+		for (int i = 0; i < num; i++) {
+			String str = (Apple)list.get(i);// i번째 저장된 데이터를 알려준다.
+			System.out.println(str);
+		}
+	}
+}
+
+
+//42번째 줄처럼. apple로 형변환을 해줘야한다. 
+//모두 숫자가 들어가면 , int로 형변환을 해준다. 
+//근데 숫자만 넣으면 안된다고함. 이유는 모르겟음. 
+
+
+package syj;
+
+import java.util.ArrayList;
+
+class Apple{
+	Apple(){}
+}
+public class Study1 {
+
+	public static void main(String[] args) {
+		ArrayList list = new ArrayList();
+		list.add(new Integer(80));// 데이터를 저장할 때 add() 메서드를 사용한다.
+		list.add(new Integer(160));
+	
+		int num = list.size();// ArrayList의 길이, 즉, ArrayList에 저장된 데이터의 개수를 알려준다.
+		for (int i = 0; i < num; i++) {
+			Integer str = (Integer)list.get(i);// i번째 저장된 데이터를 알려준다.
+			System.out.println(str);
+		}
+		
+	}
+  
+  
+}
+//뭔진 모르겟지만 이게 원래 맞는 코딩이라고 한다. 
+
+//Integer는 int의 최대클래스? 라고 함 
